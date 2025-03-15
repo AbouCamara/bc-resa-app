@@ -1,0 +1,54 @@
+###
+GET http://localhost:5000/api/rooms
+
+###
+POST http://localhost:5000/api/rooms
+Content-Type: application/json
+
+{
+    "name": "test room 3",
+    "price": 500,
+    "desc": "some description",
+    "roomNumbers": [{
+        "number": 101,
+        "unavailableDates": ["2025-03-13", "2025-03-16"]
+    }]
+}
+
+# get single room
+###
+GET http://localhost:5000/api/rooms/67d31fcf019aa165e0f2b6ea
+
+# update room
+###
+PUT http://localhost:5000/api/rooms/67d31fcf019aa165e0f2b6ea
+Content-Type: application/json
+
+{
+    "name": "update name",
+    "price": 10000
+
+}
+
+# delete room
+###
+DELETE http://localhost:5000/api/rooms/67d31fcf019aa165e0f2b6ea
+
+# get booking
+###
+GET http://localhost:5000/api/bookings
+
+# create booking
+###
+POST http://localhost:5000/api/bookings
+Content-Type: application/json
+
+
+{
+    "roomId": "67d32016019aa165e0f2b6ed",
+    "name": "salif camara",
+    "email": "camtech.pro@gmail.com",
+    "checkInDate": "2025-03-15",
+    "checkOutDate": "2025-03-16"
+
+}
