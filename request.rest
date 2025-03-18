@@ -17,11 +17,11 @@ Content-Type: application/json
 
 # get single room
 ###
-GET http://localhost:5000/api/rooms/67d31fcf019aa165e0f2b6ea
+GET http://localhost:5000/api/rooms/67d32016019aa165e0f2b6ed
 
 # update room
 ###
-PUT http://localhost:5000/api/rooms/67d31fcf019aa165e0f2b6ea
+PUT http://localhost:5000/api/rooms/67d32016019aa165e0f2b6ed
 Content-Type: application/json
 
 {
@@ -32,11 +32,15 @@ Content-Type: application/json
 
 # delete room
 ###
-DELETE http://localhost:5000/api/rooms/67d31fcf019aa165e0f2b6ea
+DELETE http://localhost:5000/api/rooms/67d32016019aa165e0f2b6ed
 
-# get booking
+# get bookings
 ###
 GET http://localhost:5000/api/bookings
+
+# get single booking
+###
+GET http://localhost:5000/api/bookings/67d5f755a79153771a22735d
 
 # create booking
 ###
@@ -46,9 +50,52 @@ Content-Type: application/json
 
 {
     "roomId": "67d32016019aa165e0f2b6ed",
-    "name": "salif camara",
+    "name": "abou camara",
     "email": "camtech.pro@gmail.com",
     "checkInDate": "2025-03-15",
     "checkOutDate": "2025-03-16"
 
 }
+
+# update booking
+###
+PUT http://localhost:5000/api/bookings/67d5e550088c2919a17e5645
+Content-Type: application/json
+
+{
+    "name": "updated name",
+    "email": "updated@gmail.com"
+}
+
+# delete booking
+###
+DELETE http://localhost:5000/api/bookings/67d5f755a79153771a22735d
+
+# get users
+###
+GET http://localhost:5000/api/users
+
+# create user
+###
+POST http://localhost:5000/api/users
+Content-Type: application/json
+
+{
+    "name": "Aboubacar Camara",
+    "email": "bacary.pro@gmail.com",
+    "password": "password"
+}
+
+# login user
+###
+POST http://localhost:5000/api/users/login
+Content-Type: application/json
+
+{
+    "email": "bacary.pro@gmail.com",
+    "password": "password"
+}
+
+# check auth
+###
+GET http://localhost:5000/auth
